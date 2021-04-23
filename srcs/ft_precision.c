@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_precision.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/31 19:04:48 by ftudini           #+#    #+#             */
-/*   Updated: 2021/04/23 12:33:15 by ftudini          ###   ########.fr       */
+/*   Created: 2021/04/23 12:09:52 by ftudini           #+#    #+#             */
+/*   Updated: 2021/04/23 12:51:46 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int main(int argc, char **argv)
+int		ft_precision(char *format, t_flags *flags, va_list ap)
 {
+	int j;
+	int p;
 	
-	char c = 'd';
-	char b = 'e';
-	int n = -3376587;
-	int un = -12233;
-	char *str = "Johnnie B. Goode";
-	ft_printf("interi -> %d, %i, - stringa -> %s, carattere -> %c %c. \n", n, un, str, c, b);
-	ft_printf("Digits hex: %d - hex: %x\n", count_digits_short(n), n);
-	if (argc != 0)
+	j = 0;
+	p = 0;
+	if (format[flags->i + j] != '.')
+		return (0);
+	flags->i++;
+	if (format[flags->i + j] == '*')
 	{
-		ft_printf("%s \n",argv[0]);
+		flags->precision = va_arg(ap, int);
+		return (1);
 	}
+	while ('0' <= format[flags->i + j] && format[flags->i + j] <= '9')
+	{
+		p *= 10;
+		p += format[flags->i + j++] - '0';
+	}
+	flags->precision = p;
+	return (1);
 }

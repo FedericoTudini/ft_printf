@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/31 19:04:48 by ftudini           #+#    #+#             */
-/*   Updated: 2021/04/23 12:33:15 by ftudini          ###   ########.fr       */
+/*   Created: 2021/04/23 12:08:36 by ftudini           #+#    #+#             */
+/*   Updated: 2021/04/23 12:08:46 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int main(int argc, char **argv)
+int		check_format(char c)
 {
-	
-	char c = 'd';
-	char b = 'e';
-	int n = -3376587;
-	int un = -12233;
-	char *str = "Johnnie B. Goode";
-	ft_printf("interi -> %d, %i, - stringa -> %s, carattere -> %c %c. \n", n, un, str, c, b);
-	ft_printf("Digits hex: %d - hex: %x\n", count_digits_short(n), n);
-	if (argc != 0)
-	{
-		ft_printf("%s \n",argv[0]);
-	}
+	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
+	|| c == 'u' || c == 'x'  || c == 'X' || c == '%')
+		return (1);
+	return(0);
+}
+
+int		check_flag(char c)
+{
+	return (c == '-' || c == '.' || c == '*' || (c >= '0' && c <= '9'));
 }

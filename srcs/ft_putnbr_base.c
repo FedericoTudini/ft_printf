@@ -6,7 +6,7 @@
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:36:34 by ftudini           #+#    #+#             */
-/*   Updated: 2021/04/03 16:28:15 by ftudini          ###   ########.fr       */
+/*   Updated: 2021/04/23 12:43:04 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,7 @@ void	ft_putnbr_base(unsigned long int nbr, char *base)
 	len = ft_lenbase(base);
 	if (len == 1)
 		return ;
-	if (nbr < 0)
-	{
-		nbr_uns = (unsigned long int)(-1 * nbr);
-	}
-	else
-	{
-		nbr_uns = (unsigned long int)nbr;
-	}
+	nbr_uns = (unsigned long int)nbr;
 	if (nbr_uns >= len)
 	{
 		ft_putnbr_base(nbr_uns / len, base);

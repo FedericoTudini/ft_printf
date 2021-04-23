@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/31 19:04:48 by ftudini           #+#    #+#             */
-/*   Updated: 2021/04/23 12:33:15 by ftudini          ###   ########.fr       */
+/*   Created: 2021/04/23 12:47:18 by ftudini           #+#    #+#             */
+/*   Updated: 2021/04/23 12:50:55 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int main(int argc, char **argv)
+int		ft_isdigit(int c)
 {
-	
-	char c = 'd';
-	char b = 'e';
-	int n = -3376587;
-	int un = -12233;
-	char *str = "Johnnie B. Goode";
-	ft_printf("interi -> %d, %i, - stringa -> %s, carattere -> %c %c. \n", n, un, str, c, b);
-	ft_printf("Digits hex: %d - hex: %x\n", count_digits_short(n), n);
-	if (argc != 0)
+	return (c >= '0' && c <= '9');
+}
+
+int		ft_atoi(const char *nptr)
+{
+	int res;
+	int sign;
+
+	res = 0;
+	sign = 1;
+	while (*nptr == '\n' || *nptr == '\t' || *nptr == '\v' 
+		|| *nptr == '\r' || *nptr == '\f' || *nptr == ' ')
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		ft_printf("%s \n",argv[0]);
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
 	}
+	while (ft_isdigit(*nptr))
+	{
+		res *= 10;
+		res += (*nptr - '0');
+		nptr++;
+	}
+	return (res * sign);
 }
