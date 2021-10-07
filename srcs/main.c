@@ -16,7 +16,6 @@ int main(int argc, char **argv)
 {
 	char c = 'd';
 	char b = 'e';
-	char *p;
 	int n = 3376587;
 	int un = 12233;
 	int ret = 0;
@@ -26,9 +25,10 @@ int main(int argc, char **argv)
 	ft_printf("ret = %d\n", ret);
 	ret = printf("interi -> %d, %i, - stringa -> %s, carattere -> %c %c. \n", n, un, str, c, b);
 	ft_printf("ret = %d\n", ret);
-	ret = ft_printf("Digits hex: %d - hex: %x\n", count_digits_short(n), n);
+	ret = ft_printf("Digits hex: %d- hex: %x\n", count_digits_short(n), n);
 	ft_printf("ret = %d\n", ret);
-	ret = printf("Digits hex: %d - hex: %x\n", count_digits_short(n), n);
+	ret = printf("Digits hex: %d- hex: %x\n", count_digits_short(n), n);
 	ft_printf("ret = %d\n", ret);
 	printf("%u\n", unsi);
+	ft_printf("%u\n", unsi);
 }

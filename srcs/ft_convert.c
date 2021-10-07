@@ -75,6 +75,8 @@ void ft_parsing(t_flags *flags, char *format, va_list ap)
 		ft_handle_str(va_arg(ap, char *), flags);
 	if (format[flags->i] == 'd' || format[flags->i] == 'i')
 		ft_handle_int(va_arg(ap, int), flags);
+	if (format[flags->i] == 'u')
+		ft_handle_unsi(va_arg(ap, unsigned int), flags);
 	if (format[flags->i] == 'x')
 		ft_handle_hexa_low(va_arg(ap, unsigned int), flags);
 	if (format[flags->i] == 'X')
@@ -82,5 +84,8 @@ void ft_parsing(t_flags *flags, char *format, va_list ap)
 	if (format[flags->i] == 'p')
 		ft_handle_pointer(va_arg(ap, unsigned long int), flags);
 	if (format[flags->i] == '%')
+	{
 		ft_putchar_fd(format[flags->i++], 1);
+		flags->ret++;
+	}
 }
