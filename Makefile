@@ -6,7 +6,7 @@
 #    By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 16:01:15 by ftudini           #+#    #+#              #
-#    Updated: 2021/10/11 16:35:31 by ftudini          ###   ########.fr        #
+#    Updated: 2021/10/11 18:07:25 by ftudini          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ SRC = ./src/ft_hex \
 	./src/ft_unsigned \
 	./src/ft_itoa \
 	./src/ft_putchar_fd \
+	./src/ft_strdup \
+	./src/ft_strlen \
 
 SRCS = $(addsuffix .c, $(SRC))
 

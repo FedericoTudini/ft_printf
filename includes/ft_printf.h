@@ -6,7 +6,7 @@
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:52:03 by ftudini           #+#    #+#             */
-/*   Updated: 2021/10/11 17:01:15 by ftudini          ###   ########.fr       */
+/*   Updated: 2021/10/11 18:08:05 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ void	ft_put_hex(unsigned int num, const char format);
 int		ft_hex_len(unsigned	int num);
 size_t	aux_len(int n);
 int		aux_num(long num);
+char	*ft_strdup(const char *src);
+int		ft_strlen(const char *str);
 
 #endif
