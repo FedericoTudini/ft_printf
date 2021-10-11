@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_int.c                                           :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftudini <ftudini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 15:52:15 by ftudini           #+#    #+#             */
-/*   Updated: 2021/10/11 16:36:02 by ftudini          ###   ########.fr       */
+/*   Created: 2021/02/25 12:44:27 by ftudini           #+#    #+#             */
+/*   Updated: 2021/10/11 16:32:32 by ftudini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_printnbr(int n)
+void	ft_putchar_fd(char c, int fd)
 {
-	int		len;
-	char	*num;
-
-	len = 0;
-	num = ft_itoa(n);
-	len = ft_printstr(num);
-	free(num);
-	return (len);
+	write(fd, &c, 1);
 }
